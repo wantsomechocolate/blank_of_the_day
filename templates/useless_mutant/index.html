@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+		
+  <!-- Header -->
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container">
+      <!--<img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">-->
+      <h1 class="text-uppercase mb-0">Welcome to Blank of the Day</h1>
+      <hr class="star-light">
+      <h2 class="font-weight-light mb-0">Simple Project Using the Twitter API and Google Custom Search API</h2>
+    </div>
+  </header>
+
+
+
+
+  <!-- About Section -->
+  <section class="mb-0" id="about">
+    <div class="container">
+      <h2 class="text-center text-uppercase">How Does It Work?</h2>
+      <hr class="star-dark mb-5">
+      <div class="row">
+        <div class="col-lg-4 ml-auto">
+          <p class="lead">The backend is set to monitor specific #hashtags. Once per day, the twitter search API is used to collect the 100 most recent tweets that contain that hashtag. All of the text before the first #hashtag in the tweet is taken for all 100 tweets and a set of unique strings is then ranked in order of frequency. </p>
+        </div>
+        <div class="col-lg-4 mr-auto">
+          <p class="lead">The most frequent 'tweet' will be used as a search query on google image search. The first result to be returned (with safe set to high of course) will be used to create a post showing the 'blank' of the day. </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  {% if query_returned_none %}
+
+  <section class="bg-primary text-white portfolio" id="portfolio">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">There's Nothing Here!</h2>
+      <hr class="star-dark mb-5">
+      <h5 class="text-center text-uppercase text-secondary mb-0">{{message}} </h5>
+    </div>
+  </section>
+
+  {% else %}
+
+
+  <!-- Portfolio Grid Section -->
+  <section class="bg-primary text-white portfolio" id="portfolio">
+    <div class="container">
+      <h2 class="text-center text-uppercase mb-0">Explore!</h2>
+      <hr class="star-light mb-5">
+      <div class="row">
+        
+
+
+        {% for post in latest_posts %}
+
+        <div class="col-md-6 col-lg-4 padding-bottom-1em">
+          <a class="um-image-caption-link d-block mx-auto" href="/{{post.hashtag_name}}"> <!--/{{ post.url }}-->
+            
+            <!-- I want this to fade in -->
+            <div class="um-caption-container d-flex position-absolute h-100 w-100">
+              <div class="my-auto w-100 text-center text-white">
+                <i class="fas font-size-caption-hashtag">#{{ post.hashtag_name }}</i>
+              </div>
+            </div>
+
+            <!-- I want this to fade out -->
+            <div class="um-image-container container-fluid">
+              <div class="image-container h-18em">
+                <img class="img-fluid w-100 h-100 object-fit-cover" src="/media/{{ post.image }}" alt="<!--{% static 'useless_mutant/img/portfolio/cake.png' %}-->"> 
+              </div>
+            </div>
+
+          </a>
+          </div>
+
+        {% endfor %}
+
+      </div>
+
+      <div class="row d-block">
+        <div class="col-md-6 col-lg-4 padding-bottom-1em float-right">
+          <a class="d-block mx-auto" href="/hashtags_all"> <!--/{{ post.url }}-->
+            <div class="d-flex position-absolute w-100">
+              <div class="my-auto w-100 text-center text-white">
+              </div>
+            </div>
+            <div class="container-fluid">
+              <div class="image-container text-white text-center">
+                All Active Hashtags
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {% endif %}
+{% endblock %}
+
+
+

@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+	<br>
+	<br>
+
+  {% if query_returned_none %}
+
+  <section>
+    <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">There's Nothing Here!</h2>
+      <hr class="star-dark mb-5">
+      <h5 class="text-center text-uppercase text-secondary mb-0">
+      	{{ message }}
+  	  </h5>
+    </div>
+  </section>
+
+ {% else %}
+
+  <section>
+    <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">
+      	<p class = "word-wrapping">
+      		Most Voted 
+      		<a href="/{{hashtag}}/archive">#{{ hashtag }}</a> 
+      		For {{ single_post.text_date }}
+      	</p>
+      </h2>
+      <hr class="star-dark mb-5">
+	  <!--<h2>The Useless Mutant of the Day is: {{ single_post.search_query }}</h2>-->
+      <h2 class="text-center text-uppercase text-secondary mb-0">{{ single_post.search_query }}</h2>
+
+      <br>
+
+      <div class="row">
+        <div class="col-lg-8 d-block mx-auto">
+          <a class="d-block mx-auto" href="/{{ hashtag }}/{{ single_post.url }}">
+          
+            <div class="d-flex position-absolute h-100 w-100">
+              <div class="my-auto w-100 text-center text-white">
+                
+              </div>
+            </div>
+
+            <!--{% static 'useless_mutant/img/portfolio/cake.png' %}-->
+			<img src="/media/{{ single_post.image }}" 
+		    class="img-fluid mx-auto d-block w-100" alt="...">
+		  
+          </a>
+        </div>
+      </div>
+
+		  <!--
+		  {% if single_post.votes <= 0 %}
+			<p> This post was unfortunately not chosen by the people </p>
+		  {% else %}
+			<p> Number of Votes: {{ single_post.votes }} </p>
+		  {% endif %}
+			-->
+		<br>
+		<div class="row">
+          <div class="col-lg-8 d-block mx-auto">
+          	<div class="float-right">
+              {{ single_post.created_at }}
+	          <!--<a href="/archive">Mutant Archive</a>-->
+    	  	</div>
+    	  </div>
+    	</div>
+
+    </div>
+  </section>
+
+
+
+  <!-- Portfolio Grid Section -->
+  <section class="bg-primary text-white portfolio" id="portfolio">
+    <div class="container">
+      <h2 class="text-center text-uppercase mb-0">Recent Winners</h2>
+      <hr class="star-light mb-5">
+      <div class="row">
+        
+
+      	{% for post in latest_posts %}
+      		
+      	<div class="col-md-6 col-lg-4 padding-bottom-1em">
+          <a class="um-image-caption-link d-block mx-auto" href="/{{hashtag}}/{{ post.url }}"> 
+
+            <!-- I want this to fade in -->
+            <div class="um-caption-container d-flex position-absolute h-100 w-100">
+              <div class="my-auto w-100 text-center text-white">
+              	<i class="fas font-size-caption">{{ post.search_query }}</i>
+              </div>
+            </div>
+            
+            <!-- I want this to fade out -->            
+            <div class="um-image-container container-fluid">
+              <div class="image-container h-18em">
+                <img class="img-fluid w-100 h-100 object-fit-cover" src="{{post.link}}" alt="{% static 'useless_mutant/img/portfolio/cake.png' %}">
+    		      </div>
+    		    </div>
+
+          </a>
+        </div>
+
+      	{% endfor %}
+
+      </div>
+
+      <div class="row d-block">
+        <div class="col-md-6 col-lg-4 padding-bottom-1em float-right">
+          <a class="d-block mx-auto" href="/{{hashtag}}/archive"> <!--/{{ post.url }}-->
+            <div class="d-flex position-absolute w-100">
+              <div class="my-auto w-100 text-center text-white">
+              </div>
+            </div>
+            <div class="container-fluid">
+              <div class="image-container text-white text-center">
+                Archive
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </section>
+
+  {% endif %}
+
+{% endblock %}
+
+
+

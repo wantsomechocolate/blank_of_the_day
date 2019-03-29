@@ -1,0 +1,65 @@
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.h-15em {
+	height:15em;
+}
+
+.h-18em {
+	height:15em;
+}
+
+.word-wrapping {
+	white-space: pre-line;
+}
+
+.padding-bottom-1em {
+	padding-bottom: 1em;
+}
+
+.padding-margin-0{
+	padding:0;
+	margin:0;
+}
+
+.um-image-caption-link:hover .um-image-container{
+	opacity: .2;
+}
+
+.um-image-caption-link:hover .um-caption-container{
+	opacity: 1;
+}
+
+.um-image-container{
+	transition: 1s;
+ 	opacity: 1;
+}
+
+.um-caption-container{
+	transition: 1s;
+ 	opacity: 0;
+ 	/*font-size: 0.5em;*/
+ 	word-break:break-all;
+ 	/*twice the padding applied by template + an extra 15px. 
+ 	Necessary because the item this class applies to is absolutely positioned*/
+ 	padding-right:45px; 
+ 	padding-left:15px;
+}
+
+.padding-1em{
+	padding:1em;
+}
+
+
+.nav-link{
+	background:none!important;
+}
+
+.font-size-caption{
+	font-size:1em;
+}
+
+.font-size-caption-hashtag{
+	font-size:3em;
+}

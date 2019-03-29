@@ -1,0 +1,24 @@
+development plan
+
+Use the twitter search to find the most common #useless mutant post.
+
+take everything that appears before the first instance of #uselessmutant to use as the vote. Must include retweets and stuff. 
+
+On days that there is no tweets in the last 7 days with that hashtag, then search google images for "useless mutant" and randomly select an image from the top 100 (or for now just the top 10)
+
+1.) get the google search working. Base function that fetches an image from google, a wrapper that takes a search query and an a number? 
+Probably not worth it. 
+
+2.) Play with twitter search 
+
+3.) Get the ranking system working
+
+4.) Decide what happens when the same search is done multiple days in a row. I'm leaning towards having a post per day and just having a counter or something. Like current streak + all time count. On the first day those wouldn't appear, but that's a front end thing. 
+
+
+The site needs two pages, one showing a single post and one showing all/ paginated history of posts. I currently have the bare bones of both of those things. 
+
+Should I deal with the scenario where the same things wins two days in a row? I could either start taking images that are not the first result OR I could not allow perfect duplicates and then have a tally that shows the current streak and longest streak for that mutant.
+
+
+

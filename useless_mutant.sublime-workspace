@@ -1,0 +1,805 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"most_",
+				"most_popular_tuple"
+			],
+			[
+				"most_pop",
+				"most_popular_count"
+			],
+			[
+				"cre",
+				"created_at_datetime"
+			],
+			[
+				"use",
+				"useless_module"
+			],
+			[
+				"most",
+				"most_popular_vote"
+			],
+			[
+				"most_popular",
+				"most_popular_tuple"
+			],
+			[
+				"acc",
+				"access_token_secret"
+			],
+			[
+				"search",
+				"search_query"
+			],
+			[
+				"point_list_",
+				"point_list_of_dicts_2"
+			],
+			[
+				"calc",
+				"calculation_operation"
+			],
+			[
+				"IS",
+				"IS_NOT_EMPTY"
+			],
+			[
+				"calcul",
+				"calculated_meters"
+			],
+			[
+				"re",
+				"requires_login"
+			],
+			[
+				"na",
+				"natural_language_description"
+			],
+			[
+				"requi",
+				"requires_login"
+			],
+			[
+				"add",
+				"add-point-btn"
+			],
+			[
+				"point_li",
+				"point_list_of_dicts"
+			],
+			[
+				"em",
+				"empty_point"
+			],
+			[
+				"nld",
+				"natural_language_description"
+			],
+			[
+				"res",
+				"result_frequency"
+			],
+			[
+				"result",
+				"result_point_ref"
+			],
+			[
+				"sub_",
+				"sub_id_config"
+			],
+			[
+				"device_type_sim",
+				"device_type_simplification"
+			],
+			[
+				"device_type_simpli",
+				"device_type_simplified"
+			],
+			[
+				"device_typ",
+				"device_type_simplified"
+			],
+			[
+				"ME",
+				"MEDIA_ROOT"
+			],
+			[
+				"get",
+				"get_object_or_404"
+			],
+			[
+				"s",
+				"script"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "useless_mutant_project/useless_mutant/views.py",
+			"settings":
+			{
+				"buffer_size": 5699,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "useless_mutant_project/useless_mutant_project/settings.py",
+			"settings":
+			{
+				"buffer_size": 3579,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "useless_mutant_project/useless_mutant/useless_module.py",
+			"settings":
+			{
+				"buffer_size": 2520,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "useless_module.py"
+			}
+		},
+		{
+			"file": "useless_mutant_project/development_plan.txt",
+			"settings":
+			{
+				"buffer_size": 1343,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "development plan"
+			}
+		},
+		{
+			"file": "useless_mutant_project/templates/useless_mutant/post.html",
+			"settings":
+			{
+				"buffer_size": 647,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "post.html"
+			}
+		},
+		{
+			"file": "useless_mutant_project/templates/useless_mutant/archive.html",
+			"settings":
+			{
+				"buffer_size": 394,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "archive.html"
+			}
+		},
+		{
+			"file": "useless_mutant_project/useless_mutant/models.py",
+			"settings":
+			{
+				"buffer_size": 1195,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "useless_mutant_project/useless_mutant_project/urls.py",
+			"settings":
+			{
+				"buffer_size": 1002,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "useless_mutant_project/useless_mutant/urls.py",
+			"settings":
+			{
+				"buffer_size": 1041,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/wantsomechan/Projects/Websites/UselessMutant/useless_mutant_project",
+		"/home/wantsomechan/Projects/Websites/UselessMutant/useless_mutant_project/useless_mutant",
+		"/home/wantsomechan/Projects/Websites/UselessMutant/useless_mutant_project/useless_mutant_project",
+		"/home/wantsomechan/Projects/Websites/UselessMutant/celery"
+	],
+	"file_history":
+	[
+		"/home/wantsomechan/Projects/Websites/UselessMutant/useless_mutant_project/sample_scripts/twitter_api_sandbox.py",
+		"/home/wantsomechan/Projects/Websites/UselessMutant/useless_mutant_project/useless_mutant/admin.py",
+		"/home/wantsomechan/Projects/Websites/UselessMutant/useless_mutant_project/sample_scripts/google_api_sandbox.py",
+		"/home/wantsomechan/Projects/Websites/UselessMutant/useless_mutant_project/templates/better_mutant.html",
+		"/home/wantsomechan/Projects/Websites/UselessMutant/celery/tasks.py",
+		"/home/wantsomechan/Projects/Websites/UselessMutant/useless_mutant_project/useless_mutant_project/__init__.py",
+		"/home/wantsomechan/Projects/Websites/UselessMutant/useless_mutant_project/useless_mutant/tasks.py",
+		"/home/wantsomechan/Projects/Websites/UselessMutant/useless_mutant_project/useless_mutant_project/celery.py",
+		"/home/wantsomechan/Projects/Websites/UselessMutant/useless_mutant_project/useless_mutant/urls.py",
+		"/home/wantsomechan/Projects/Websites/UselessMutant/useless_mutant_project/useless_mutant_project/settings.py",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/fabfile.py",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/view_db.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/calculation.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/archive/calculated_meters.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/display_form.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/index.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/simple_form.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/controllers/default.py",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/models/tables.py",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/models/db.py",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/.gitignore",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/Steps.txt",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/ajax_form_submit_example_request.txt",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/models/menu.py",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/modules/aux.py",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/acquisuite.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/mpm.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/LinodePlan.txt",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/regex_test.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/calculated_meters.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/calc_ajax_test_2.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/calc_ajax_test_3.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/create_form.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/display_form_2.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/calc_ajax_test.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/views/default/skyspark.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/static/js/auto_refresh.js",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/welcome/views/default/index.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/README.markdown",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/upload_logfiles/databases/37dfa1023ac14c0d7a31d4c2d799997b_das_config.table",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/welcome/modules/aux.py",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/welcome/modules/__init__.py",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/welcome/models/menu.py",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/Procfile",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/gitworkflow.txt",
+		"/home/wantsomechan/Projects/beanstalktest/applications/upload_logfiles/models/db.py",
+		"/home/wantsomechan/Projects/beanstalktest/parameters_8000.py",
+		"/home/wantsomechan/Projects/beanstalktest/applications/upload_logfiles/models/tables.py",
+		"/home/wantsomechan/Projects/beanstalktest/ssl_cert_arn.txt",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/.elasticbeanstalk/config.yml",
+		"/home/wantsomechan/Projects/beanstalktest/applications/upload_logfiles/views/default/acquisuite.html",
+		"/home/wantsomechan/Projects/beanstalktest/applications/upload_logfiles/controllers/default.py",
+		"/home/wantsomechan/Projects/beanstalktest/routes.py",
+		"/home/wantsomechan/Projects/beanstalktest/.elasticbeanstalk/config.yml",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/routes.py",
+		"/home/wantsomechan/Projects/WantsomeBeanstalk/requirements.txt",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/.ebextensions/python.config",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/application.py",
+		"/home/wantsomechan/Downloads/html.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/acquisuite/views/acquisuite/index.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/acquisuite/views/acquisuite/logfile_upload.html",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/acquisuite/controllers/acquisuite.py",
+		"/home/wantsomechan/Projects/CodeGreenAppsJM/applications/acquisuite/controllers/default.py",
+		"/home/wantsomechan/Projects/WantsomeDashboards/Procfile",
+		"/home/wantsomechan/Projects/WantsomeDashboards/fabfile.py",
+		"/home/wantsomechan/Projects/WantsomeDashboards/gitworkflow.txt",
+		"/home/wantsomechan/Projects/WantsomeDashboards/applications/dashboard/models/db.py",
+		"/home/wantsomechan/Projects/WantsomeDashboards/applications/dashboard/controllers/default.py",
+		"/home/wantsomechan/Projects/WantsomeDashboards/applications/dashboard/static/js/wsd.js",
+		"/home/wantsomechan/Projects/WantsomeDashboards/applications/dashboard/views/default/aws_table.html",
+		"/home/wantsomechan/Projects/WantsomeDashboards/applications/dashboard/views/default/device.html",
+		"/home/wantsomechan/Projects/WantsomeDashboards/applications/dashboard/modules/wantsome.py",
+		"/home/wantsomechan/Projects/WantsomeDashboards/applications/dashboard/static/robots.txt",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/django-bloggy/bloggy_project/blog/admin.py",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/django-bloggy/bloggy_project/blog/tests.py",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/django-bloggy/bloggy_project/blog/models.py",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/django-bloggy/bloggy_project/bloggy_project/urls.py",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/django-bloggy/bloggy_project/blog/urls.py",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/django-bloggy/bloggy_project/templates/blog/index.html",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/django-bloggy/bloggy_project/templates/blog/post.html",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/django-bloggy/bloggy_project/blog/views.py",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/django-bloggy/bloggy_project/bloggy_project/settings.py",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/untitled",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/hello_world_project/hello_world/static/hello_world/main.js",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/hello_world_project/hello_world/views.py",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/hello_world_project/templates/index.html",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/hello_world_project/staticfiles/js/main.js",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/hello_world_project/hello_world_project/settings.py",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/hello_world_project/hello_world_project/urls.py",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/hello_world_project/hello_world/urls.py",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/hello_world_project/templates/betterhello.html",
+		"/home/wantsomechan/Projects/RealPython/RealPythonProjects/hello_world_project/main.js",
+		"/home/wantsomechan/Projects/intersectingbananas/image_sources.txt",
+		"/home/wantsomechan/Projects/Learn Mandarin/Mangsu Zhongwen/#1: 端午节/#1: 端午节 transcript.txt",
+		"/home/wantsomechan/Projects/MosaicMaker/.gitignore",
+		"/home/wantsomechan/Projects/MosaicMaker/Python Files/MosaicMakerReal/mosaicModuleFAXP.py",
+		"/home/wantsomechan/Projects/MosaicMaker/Python Files/MosaicMakerReal/savedImageQueriesF2.log",
+		"/home/wantsomechan/.bashrc"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 82.0,
+		"where_history":
+		[
+			"/home/wantsomechan/Projects/CodeGreenAppsJM"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"reference",
+			"calc_step_records",
+			"calculated_meter",
+			"type",
+			": ",
+			"point20",
+			"attr",
+			"calc_step_records[0].calculation_order",
+			"requires_log",
+			" ",
+			"': '",
+			"', '",
+			"point_id__",
+			"n",
+			"new",
+			"CODEGREENAPPS_DB",
+			"AWS_S3_SECRET_CG",
+			"AWS_S3_KEY_CG",
+			"AWS_S3_BUCKET_PREFIX_CG",
+			"AWS_S3_BUCKET_NAME_CG",
+			"gluon",
+			"requires",
+			"reference",
+			"request.vars['",
+			"help",
+			"update_or_insert",
+			"aws",
+			"favicon",
+			"        #",
+			"if DEBUG_LEVEL>=ERROR:",
+			"if DEBUG_LEVEL>=DEBUG2:",
+			"if DEBUG_LEVEL>=INFO:",
+			"if DEBUG_LEVEL>=DEBUG:",
+			"if DEBUG_LEVEL>=NORMAL:",
+			"field_storage_object",
+			"str(time)",
+			"time",
+			"debug_level",
+			"migrate",
+			"debug_tbl",
+			"debug_table",
+			"aws_table",
+			"device",
+			"device_",
+			"log_file",
+			"hash key",
+			"timeseriestable",
+			"timeseries",
+			"timeseries_data",
+			"time_series_data",
+			"das_attributes",
+			"das",
+			"media_root",
+			"gitignore",
+			"env"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"=",
+			"calc_step_index",
+			"",
+			" = ",
+			" & ",
+			"if DEBUG_LEVEL>=DEBUG_LEVELS['ERROR']:",
+			"if DEBUG_LEVEL>=DEBUG_LEVELS['DEBUG2']:",
+			"if DEBUG_LEVEL>=DEBUG_LEVELS['INFO']:",
+			"if DEBUG_LEVEL>=DEBUG_LEVELS['DEBUG']:",
+			"if DEBUG_LEVEL>=DEBUG_LEVELS['NORMAL']:",
+			"str(datetime.now())",
+			"datetime.now()",
+			"DEBUG_LEVEL"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "useless_mutant_project/useless_mutant/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5699,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4989,
+								4989
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2182.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "useless_mutant_project/useless_mutant_project/settings.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3579,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								766,
+								766
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "useless_mutant_project/useless_mutant/useless_module.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2520,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1936,
+								1936
+							]
+						],
+						"settings":
+						{
+							"auto_name": "useless_module.py",
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 607.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "useless_mutant_project/development_plan.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1343,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1339,
+								1339
+							]
+						],
+						"settings":
+						{
+							"auto_name": "development plan",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "useless_mutant_project/templates/useless_mutant/post.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								356,
+								356
+							]
+						],
+						"settings":
+						{
+							"auto_name": "post.html",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "useless_mutant_project/templates/useless_mutant/archive.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 394,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								214,
+								214
+							]
+						],
+						"settings":
+						{
+							"auto_name": "archive.html",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "useless_mutant_project/useless_mutant/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1195,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								445,
+								445
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "useless_mutant_project/useless_mutant_project/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1002,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								817,
+								817
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "useless_mutant_project/useless_mutant/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1041,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								554,
+								554
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "useless_mutant.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 438.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Projects/Websites/UselessMutant/useless_mutant.sublime-project"
+			]
+		],
+		"width": 333.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 229.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
