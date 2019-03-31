@@ -80,12 +80,32 @@ WSGI_APPLICATION = 'useless_mutant_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+from urllib.parse import urlparse
+DB_INFO = urlparse(os.environ['BOTD_HEROKU_POSTGRESDB'])
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3'       ,
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3') ,
+        'ENGINE'    :   'django.db.backends.postgresql' ,
+        'NAME'      :   DB_INFO.path[1:]               ,                      
+        'USER'      :   DB_INFO.username                ,
+        'PASSWORD'  :   DB_INFO.password                ,
+        'HOST'      :   DB_INFO.hostname                ,
+        'PORT'      :   DB_INFO.port                    ,
+    },
+
+
+    'local': {
+        'ENGINE'    :   'django.db.backends.sqlite3'            ,
+        'NAME'      :   os.path.join(BASE_DIR, 'db.sqlite3')    ,
+        'USER'      :   ''                                      ,
+        'PASSWORD'  :   ''                                      ,
+        'HOST'      :   ''                                      ,
+        'PORT'      :   ''                                      ,
     }
+
+
+
+
 }
 
 
