@@ -5,7 +5,6 @@
   <!-- Header -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container">
-      <!--<img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">-->
       <h1 class="text-uppercase mb-0">Welcome to Blank of the Day</h1>
       <hr class="star-light">
       <h2 class="font-weight-light mb-0">Simple Project Using the Twitter API and Google Custom Search API</h2>
@@ -71,7 +70,7 @@
             <!-- I want this to fade out -->
             <div class="um-image-container container-fluid">
               <div class="image-container h-18em">
-                <img class="img-fluid w-100 h-100 object-fit-cover" src="/media/{{ post.image }}" alt="<!--{% static 'useless_mutant/img/portfolio/cake.png' %}-->"> 
+                <img class="img-fluid w-100 h-100 object-fit-cover" src="{{post.image.url}}" alt="<!--{% static 'useless_mutant/img/portfolio/cake.png' %}-->"> 
               </div>
             </div>
 

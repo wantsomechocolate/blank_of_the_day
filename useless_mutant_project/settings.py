@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'useless_mutant',
 
     # Third Party Apps
+    'storages',
     #'django_celery_results',
 ]
 
@@ -165,6 +166,15 @@ STATICFILES_DIRS = [
 
 ## Added for Celery
 CELERY_RESULT_BACKEND = 'django-db'
+
+
+## For S3
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = os.environ['BOTD_AWS_ACCESSKEY']
+AWS_SECRET_ACCESS_KEY = os.environ['BOTD_AWS_SECRETKEY']
+AWS_STORAGE_BUCKET_NAME = os.environ['BOTD_AWS_BUCKETNAME']
+AWS_S3_REGION_NAME = "us-west-2"
+
 
 
 django_heroku.settings(locals())

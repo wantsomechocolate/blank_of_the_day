@@ -98,7 +98,7 @@ def post_add_calc_fields(post,globals_dict):
 
 	import datetime
 
-	post.url 		= 	post.search_query.replace(' ','_') + "-" + str(post.created_at.strftime(globals_dict['DATE_FORMAT']))    
+	post.url		= 	post.search_query.replace(' ','_') + "-" + str(post.created_at.strftime(globals_dict['DATE_FORMAT']))    
 	post.text_date 	= 	datetime.datetime.strftime(post.created_at, "%Y-%m-%d")
 	post.text_time	=	datetime.datetime.strftime(post.created_at, "%H-%M-%S")	
 
