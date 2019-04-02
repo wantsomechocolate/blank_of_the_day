@@ -91,7 +91,7 @@ DATABASES = {
         'USER'      :   DB_INFO.username                ,
         'PASSWORD'  :   DB_INFO.password                ,
         'HOST'      :   DB_INFO.hostname                ,
-        'PORT'      :   DB_INFO.port                    ,
+        #'PORT'      :   DB_INFO.port                    ,
     },
 
 
