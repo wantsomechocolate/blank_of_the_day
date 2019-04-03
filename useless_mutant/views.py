@@ -225,58 +225,56 @@ def	archive(request, hashtag):
 	return	HttpResponse(t.render(c))
 
 
-
+## This function is now a managpy.py command called update_posts
 ## Should be scheduled, should require admin priveldges to run
-def create_new_post_from_votes_twitter(request, hashtag):
+# def create_new_post_from_votes_twitter(request, hashtag):
 
-	from collections import Counter
-	import random
+# 	from collections import Counter
+# 	import random
 	
-	#from useless_mutant.useless_module import tally_twitter_votes
-	c = um.tally_twitter_votes(hashtag)
+# 	#from useless_mutant.useless_module import tally_twitter_votes
+# 	c = um.tally_twitter_votes(hashtag)
 
-	# If there are no votes than don't create a post!
-	if c == Counter():
-		return	HttpResponse('<html><body>There are no votes to create a post</body></html>')
+# 	# If there are no votes than don't create a post!
+# 	if c == Counter():
+# 		return	HttpResponse('<html><body>There are no votes to create a post</body></html>')
 	
 	
-	most_popular_tuple = c.most_common(1)[0]
-	most_popular_vote = most_popular_tuple[0]
-	most_popular_count= most_popular_tuple[1]
+# 	most_popular_tuple = c.most_common(1)[0]
+# 	most_popular_vote = most_popular_tuple[0]
+# 	most_popular_count= most_popular_tuple[1]
 
-	if most_popular_count == 1:
-		return	HttpResponse('<html><body>No one rose above the rest</body></html>')
+# 	if most_popular_count == 1:
+# 		return	HttpResponse('<html><body>No one rose above the rest</body></html>')
 
 
-	q_raw=most_popular_vote
-	q = q_raw.replace('\n',' ')
+# 	q_raw=most_popular_vote
+# 	q = q_raw.replace('\n',' ')
 
-	## Might consider randomizing this in the future. 
-	i = random.randrange(0,MAX_NUM_RESULT)
+# 	## Might consider randomizing this in the future. 
+# 	i = random.randrange(0,MAX_NUM_RESULT)
 
-	link_info = um.google_image_search(q,i)
+# 	link_info = um.google_image_search(q,i)
 	
-	if 'error' in link_info.keys():
-		return	HttpResponse('<html><body>The search query'+'<br>'+str(q)+'<br>'+'did not return any results</body></html>')
+# 	if 'error' in link_info.keys():
+# 		return	HttpResponse('<html><body>The search query'+'<br>'+str(q)+'<br>'+'did not return any results</body></html>')
 
-	img_link=link_info['link']
+# 	img_link=link_info['link']
 
-	h, h_created_tf = Hashtag.objects.get_or_create(name = hashtag)
-	if not h_created_tf:
-		h.last_post_added_time=datetime.datetime.utcnow()
-	h.save()
+# 	h, h_created_tf = Hashtag.objects.get_or_create(name = hashtag)
+# 	if not h_created_tf:
+# 		h.last_post_added_time=datetime.datetime.utcnow()
+# 	h.save()
 
-	## I need to download the image from the link and than save it into the image field!
+# 	## Save the post (automatically takes care of saving the image)
+# 	p = Post(	search_query 		=	q 					, 
+# 				search_query_raw	=	q_raw 				, 
+# 				link 				= 	img_link			, 
+# 				votes 				= 	most_popular_count 	, 
+# 				hashtag 			= 	h 					, 	)
+# 	p.save()
 
-
-	p = Post(	search_query 		=	q 					, 
-				search_query_raw	=	q_raw 				, 
-				link 				= 	img_link			, 
-				votes 				= 	most_popular_count 	, 
-				hashtag 			= 	h 					, 	)
-	p.save()
-
-	return	HttpResponse('<html><body>Successfully created post using'+'<br>'+str(q)+'<br>'+'!</body></html>')
+# 	return	HttpResponse('<html><body>Successfully created post using'+'<br>'+str(q)+'<br>'+'!</body></html>')
 
 	#most_popular_tuple = c.most_common(1)[0]
 	#most_popular_vote = most_popular_tuple[0]
