@@ -33,18 +33,18 @@ urlpatterns	=	[
 
 	# This is the special view for displaying the result of running the function that is to be scheduled to 
 	# create posts. It doesn't actually need a view. 
-	url(r'^create_new_post_from_votes_twitter/(?P<hashtag>\w+)/$', views.create_new_post_from_votes_twitter, name = 'create_new_post_from_votes_twitter'),
+	#url(r'^create_new_post_from_votes_twitter/(?P<hashtag>\w+)/$', views.create_new_post_from_votes_twitter, name = 'create_new_post_from_votes_twitter'),
 
 
 
 	##########################################################
 	# Sandbox
-	url(r'^instagram/', views.instagram, name='instagram'),
-	url(r'^twitter/', views.twitter, name='twitter'),
+	#url(r'^instagram/', views.instagram, name='instagram'),
+	#url(r'^twitter/', views.twitter, name='twitter'),
 	# match create_new_post
-	url(r'^create_new_post/', views.create_new_post, name = 'create_new_post'),
+	#url(r'^create_new_post/', views.create_new_post, name = 'create_new_post'),
 	# match create_new_post from twitter
-	url(r'^create_new_post_from_twitter/', views.create_new_post_from_twitter, name = 'create_new_post_from_twitter'),
+	#url(r'^create_new_post_from_twitter/', views.create_new_post_from_twitter, name = 'create_new_post_from_twitter'),
 
 
 

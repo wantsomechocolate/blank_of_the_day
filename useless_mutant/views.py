@@ -336,112 +336,112 @@ def	archive(request, hashtag):
 
 
 ## Function to add a new post, this is mostly for testing purposes and to keep the google search engine api at the top of my mind
-def create_new_post(request):
+# def create_new_post(request):
 
-	from apiclient.discovery import build
-	import os
+# 	from apiclient.discovery import build
+# 	import os
 
-	search_query=request.GET.get('q')
+# 	search_query=request.GET.get('q')
 
-	search_query=search_query.replace('_',' ')
+# 	search_query=search_query.replace('_',' ')
 
-	# api_key = os.environ['USELESSMUTANT_APIKEY']
-	# service = build('customsearch','v1', developerKey = api_key)
+# 	# api_key = os.environ['USELESSMUTANT_APIKEY']
+# 	# service = build('customsearch','v1', developerKey = api_key)
 
-	# res = service.cse().list(q=search_query ,cx=os.environ['USELESSMUTANT_CX'], searchType='image', num=1, imgType='clipart', fileType='png',safe='high')
-	# res_ex = res.execute()
+# 	# res = service.cse().list(q=search_query ,cx=os.environ['USELESSMUTANT_CX'], searchType='image', num=1, imgType='clipart', fileType='png',safe='high')
+# 	# res_ex = res.execute()
 
-	i = 30
+# 	i = 30
 
-	link_info = um.google_image_search(q,i)
+# 	link_info = um.google_image_search(q,i)
 
-	#img_link=res_ex['items'][0]['link']
+# 	#img_link=res_ex['items'][0]['link']
 
-	img_link=link_info['link']
+# 	img_link=link_info['link']
 
-	#print (img_link)
+# 	#print (img_link)
 
-	p = Post(search_query=search_query, link=img_link)
-	p.save()
+# 	p = Post(search_query=search_query, link=img_link)
+# 	p.save()
 
-	return	HttpResponse('<html><body>Success!</body></html>')
+# 	return	HttpResponse('<html><body>Success!</body></html>')
 
 
 
 
 ## Function to add a new post, this is mostly for testing purposes and to keep the google search engine api at the top of my mind
-def create_new_post_from_twitter(request):
+# def create_new_post_from_twitter(request):
 
-	## The twitter stuff. 
-	import twitter
-	import os
-	from django.shortcuts import redirect
+# 	## The twitter stuff. 
+# 	import twitter
+# 	import os
+# 	from django.shortcuts import redirect
 
-	consumer_key=os.environ["USELESSMUTANT_TWITTER_APIKEY"]
-	consumer_secret=os.environ["USELESSMUTANT_TWITTER_SECRETKEY"]
-	access_token=os.environ["USELESSMUTANT_TWITTER_ACCESSTOKEN"]
-	access_token_secret=os.environ["USELESSMUTANT_TWITTER_SECRETTOKEN"]
+# 	consumer_key=os.environ["USELESSMUTANT_TWITTER_APIKEY"]
+# 	consumer_secret=os.environ["USELESSMUTANT_TWITTER_SECRETKEY"]
+# 	access_token=os.environ["USELESSMUTANT_TWITTER_ACCESSTOKEN"]
+# 	access_token_secret=os.environ["USELESSMUTANT_TWITTER_SECRETTOKEN"]
 
-	api = twitter.Api(
-		consumer_key=consumer_key, 
-		consumer_secret=consumer_secret, 
-		access_token_key=access_token, 
-		access_token_secret=access_token_secret
-		)
+# 	api = twitter.Api(
+# 		consumer_key=consumer_key, 
+# 		consumer_secret=consumer_secret, 
+# 		access_token_key=access_token, 
+# 		access_token_secret=access_token_secret
+# 		)
 
-	user="WantsomeChan"
-	statuses = api.GetUserTimeline(screen_name=user)
-	most_recent=statuses[0].text
-	index=most_recent.find("#uselessmutant")
+# 	user="WantsomeChan"
+# 	statuses = api.GetUserTimeline(screen_name=user)
+# 	most_recent=statuses[0].text
+# 	index=most_recent.find("#uselessmutant")
 
-	## Get the search query
-	if index == -1:
-		content="Snooki"
-	else:
-		content=most_recent[0:most_recent.find("#uselessmutant")].strip()
+# 	## Get the search query
+# 	if index == -1:
+# 		content="Snooki"
+# 	else:
+# 		content=most_recent[0:most_recent.find("#uselessmutant")].strip()
 
 
-	## The google stuff. 
-	from apiclient.discovery import build
-	import os
+# 	## The google stuff. 
+# 	from apiclient.discovery import build
+# 	import os
 
-	#search_query=request.GET.get('q')
-	#search_query=search_query.replace('_',' ')
+# 	#search_query=request.GET.get('q')
+# 	#search_query=search_query.replace('_',' ')
 
-	search_query=content
+# 	search_query=content
 
-	api_key = os.environ['USELESSMUTANT_APIKEY']
-	service = build('customsearch','v1', developerKey = api_key)
+# 	api_key = os.environ['USELESSMUTANT_APIKEY']
+# 	service = build('customsearch','v1', developerKey = api_key)
 
-	res = service.cse().list(q=search_query ,cx=os.environ['USELESSMUTANT_CX'], searchType='image', num=1, imgType='clipart', fileType='png',safe='high')
-	res_ex = res.execute()
+# 	res = service.cse().list(q=search_query ,cx=os.environ['USELESSMUTANT_CX'], searchType='image', num=1, imgType='clipart', fileType='png',safe='high')
+# 	res_ex = res.execute()
 
-	img_link=res_ex['items'][0]['link']
+# 	img_link=res_ex['items'][0]['link']
 
-	#print (img_link)
+# 	#print (img_link)
 
-	p = Post(search_query=search_query, link=img_link)
-	p.save()
+# 	p = Post(search_query=search_query, link=img_link)
+# 	p.save()
 
-	#return	HttpResponse('<html><body>Success!</body></html>')	
-	return redirect("index")
+# 	#return	HttpResponse('<html><body>Success!</body></html>')	
+# 	return redirect("index")
 
 
 
 
 
 # Other function ideas
-def	instagram(request):
-	return	HttpResponse(
-		"Here is today's useless mutant as decided by instagram. Want to go back to the main page? <a href='/'>Back Home</a>"
-		)
+# def	instagram(request):
+# 	return	HttpResponse(
+# 		"Here is today's useless mutant as decided by instagram. Want to go back to the main page? <a href='/'>Back Home</a>"
+# 		)
 
-def	twitter(request):
-	return	HttpResponse(
-		"Here is today's useless mutant as decided by twitter. Want to go back to the main page? <a href='/'>Back Home</a>"
-		)
+# def	twitter(request):
+# 	return	HttpResponse(
+# 		"Here is today's useless mutant as decided by twitter. Want to go back to the main page? <a href='/'>Back Home</a>"
+# 		)
 
-def	better(request):
-	t = loader.get_template('better_mutant.html')
-	c = {'current_time': datetime.now(), }
-	return HttpResponse(t.render(c))
+# def	better(request):
+# 	t = loader.get_template('better_mutant.html')
+# 	c = {'current_time': datetime.now(), }
+# 	return HttpResponse(t.render(c))
