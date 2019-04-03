@@ -65,7 +65,7 @@ class Post(models.Model):
 			img_temp.write(response.read())
 			img_temp.flush()
 
-			self.image.save("image_{}-{}.{}".format(self.search_query, 
+			self.image.save("image_{}-{}.{}".format(self.search_query[:50], 
 													datetime.strftime(self.created_at,"%Y%m%d%H%M%S%f"), 
 													extension) ,
 					       	File(img_temp),)
