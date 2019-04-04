@@ -27,13 +27,15 @@ class Command(BaseCommand):
     		# If there are no votes than don't create a post!
     		if c == Counter():
     			self.stdout.write("There are no votes to create a post")
-
+    			continue
+    		
     		most_popular_tuple = c.most_common(1)[0]
     		most_popular_vote = most_popular_tuple[0]
     		most_popular_count= most_popular_tuple[1]
 
     		if most_popular_count == 1:
     			self.stdout.write("No one rose above the rest")
+    			continue
 
     		q_raw=most_popular_vote
 
@@ -48,7 +50,8 @@ class Command(BaseCommand):
     		link_info = um.google_image_search(q,i)
 
     		if 'error' in link_info.keys():
-    			self.stdout.write("The search query "+str(q)+" did not return any results")
+    			self.stdout.write("The search query: "+str(q)+" did not return any results")
+    			continue
 
     		img_link=link_info['link']
 
@@ -70,7 +73,7 @@ class Command(BaseCommand):
 
     		p.save()
 
-    		self.stdout.write("Successfully created a post with "+str(q))
+    		self.stdout.write("Successfully created a post with: "+str(q))
 
     	#self.stdout.write("Finished "+hashtag.name)
 

@@ -21,8 +21,8 @@ class Hashtag(models.Model):
 # Create your models here.
 class Post(models.Model):
 	created_at     =  models.DateTimeField(default=datetime.utcnow)
-	search_query   =  models.TextField() #CharField(max_length=100)
-	search_query_raw = models.TextField() #CharField(max_length=100)
+	search_query   =  models.TextField(max_length=500) #CharField(max_length=100)
+	search_query_raw = models.TextField(max_length=500) #CharField(max_length=100)
 	link           =  models.URLField()
 	image          =  models.ImageField(upload_to="images", blank=True, null=True)
 	#hashtag_name        =  models.CharField(max_length=100)
@@ -55,7 +55,22 @@ class Post(models.Model):
 
 		if self.link and not self.image:
 			
-			response = urlopen(self.link)
+			## I don't know the reason, but sometimes, google randomly gives me a 404 error
+			## when I go to do this line. 
+			attempts = 0
+			while attempts <= 3:
+				try:
+					response = urlopen(self.link)
+					break
+				except urllib.error.HTTPError as err:
+					response = None
+					attempts+=1
+
+			if response == None:
+				self.stdout.write("Google would not let me access the image at: "+str(self.link)+" This post will not be created")
+				return None
+
+
 			#content_type = response.headers['content-type']
 			content_type = response.info().get_content_subtype()
 			#extension = mimetypes.guess_extension(content_type)
