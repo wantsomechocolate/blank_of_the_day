@@ -35,6 +35,7 @@ GLOBALS_DICT = {	'DATE_FORMAT'					:	DATE_FORMAT						,
 def hashtags_all(request):
 
 	## A view to show viewers all the active hashtags - doesn't guaruntee that each post shown has a post. 
+	## Although I agree that it should. 
 
 	## VIEWRIABLES #########################################################################	
 	template 	=	'useless_mutant/hashtags_all.html'
@@ -44,7 +45,7 @@ def hashtags_all(request):
 	## DB IO ###############################################################################
 	hashtags_all 	= 	Hashtag.objects 							\
 								.filter(enabled=True) 				\
-								.order_by('-last_post_added_time') 	#
+								.order_by('name') 	#
 
 	if len(hashtags_all)==0: 	## Check to see if any items came back. if not you're done! 
 		c 	=	{	'query_returned_none'	:	True						,		#
