@@ -30,7 +30,7 @@ if os.environ['BOTD_DJANGO_DEBUG']=="True":
 else:
     DEBUG = False
 
-DEBUG = True
+#DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
