@@ -16,6 +16,7 @@ import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+ADMINS = [("James", 'wantsomechocolate@gmail.com')]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -30,9 +31,11 @@ if os.environ['BOTD_DJANGO_DEBUG']=="True":
 else:
     DEBUG = False
 
-#DEBUG = True
-ALLOWED_HOSTS = ['*']
-
+## ALLOWED HOSTS!
+allowed_host_text = os.environ['BOTD_DJANGO_ALLOWEDHOSTS'] 
+ALLOWED_HOSTS = []
+for item in allowed_host_text.split(","):
+    ALLOWED_HOSTS.append(item.strip())
 
 # Application definition
 
