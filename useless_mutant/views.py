@@ -71,7 +71,7 @@ def	index(request):
 	## and then when you get a certain number with at least one post then you move on. 
 	## Or when you get to the end of the list. 
 	## The other thing I can do is mark a hashtag enabled=False by default and then 
-	## again if it ever gets to a point where it has no children. 
+	## again if it ever gets to a point where it has no children.  
 
 
 	## VIEWRIABLES #########################################################################
