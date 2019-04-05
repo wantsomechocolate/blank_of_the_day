@@ -1,0 +1,11 @@
+*Useful Info*
+*Idle in Virtual Environment*
+Add this to activate script to get idle to work in virtualenv
+set "TCL_LIBRARY=C:\Users\wants\AppData\Local\Programs\Python\Python35-32\tcl\tcl8.6"
+then invoke idle with python -m idlelib.idle
+
+*Link to Google custom search*
+https://cse.google.com
+
+*Running a django manage.py command on deployed app*
+heroku run python manage.py update_posts -a blank-of-the-day
