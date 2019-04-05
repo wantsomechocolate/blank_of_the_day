@@ -80,10 +80,15 @@ def	index(request):
 
 
 	## DB IO ###############################################################################
-	hashtags_with_most_recent_posts = Hashtag.objects \
+	try:
+		hashtags_with_most_recent_posts = Hashtag.objects \
 												.filter(enabled=True) \
 												.order_by('-last_post_added_time')[0:3]
-	
+	except:
+		c 	=	{	'query_returned_none'	:	True						,		#
+					'message'				:	MESSAGE_NO_HASHTAGS_SETUP	,	}	#		
+		return	HttpResponse(t.render(c))		
+
 	if len(hashtags_with_most_recent_posts)==0:  ## If there are not hashtags setup yet (fresh db)
 		c 	=	{	'query_returned_none'	:	True						,		#
 					'message'				:	MESSAGE_NO_HASHTAGS_SETUP	,	}	#		
