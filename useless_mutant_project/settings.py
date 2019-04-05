@@ -25,9 +25,13 @@ SECRET_KEY = os.environ['BOTD_DJANGO_SECRETKEY']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.environ['BOTD_DJANGO_DEBUG']=="True":
+    DEBUG = True
+else:
+    DEBUG = False
 
-ALLOWED_HOSTS = []
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -165,7 +169,7 @@ STATICFILES_DIRS = [
 ## Added as part of real python tutorial
 
 ## Added for Celery
-CELERY_RESULT_BACKEND = 'django-db'
+#CELERY_RESULT_BACKEND = 'django-db'
 
 
 ## For S3
@@ -175,6 +179,45 @@ AWS_SECRET_ACCESS_KEY = os.environ['BOTD_AWS_SECRETKEY']
 AWS_STORAGE_BUCKET_NAME = os.environ['BOTD_AWS_BUCKETNAME']
 AWS_S3_REGION_NAME = "us-west-2"
 AWS_DEFAULT_ACL = None
+
+
+
+## Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'botd.log',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers':['file'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+        'MYAPP': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        },
+    }
+}
+
+
+
 
 
 django_heroku.settings(locals())
