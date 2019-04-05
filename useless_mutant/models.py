@@ -1,7 +1,6 @@
 from django.db import models
-from datetime import datetime
+from datetime import datetime, timezone
 from django.contrib.postgres.fields import JSONField
-
 from django.core.files import File
 from urllib.request import urlopen, urlretrieve
 from tempfile import NamedTemporaryFile
@@ -10,7 +9,7 @@ import mimetypes
 
 class Hashtag(models.Model):
 	created_at           = models.DateTimeField(default = datetime.utcnow)
-	last_post_added_time = models.DateTimeField(default = datetime.utcnow)
+	last_post_added_time = models.DateTimeField(default = datetime(1988,1,29,3,1,0,0,timezone.utc))
 	name                 = models.CharField(max_length=100)
 	enabled              = models.BooleanField(default=True)
 
@@ -25,7 +24,6 @@ class Post(models.Model):
 	search_query_raw = models.TextField(max_length=500) #CharField(max_length=100)
 	link           =  models.URLField()
 	image          =  models.ImageField(upload_to="images", blank=True, null=True)
-	#hashtag_name        =  models.CharField(max_length=100)
 	
 	hashtag    =  models.ForeignKey(Hashtag, on_delete=models.CASCADE, default=1)
 
@@ -43,13 +41,9 @@ class Post(models.Model):
 
 	views          =  models.IntegerField(default=0)
 
-	#def	__str__(self):
-	#	return	self.search_query
-
 	def	__str__(self):
 		return	"{0} - {1}\n".format(self.created_at, self.search_query)
 	
-
 	def save(self, *args, **kwargs):
 		
 
@@ -70,10 +64,7 @@ class Post(models.Model):
 				self.stdout.write("Google would not let me access the image at: "+str(self.link)+" This post will not be created")
 				return None
 
-
-			#content_type = response.headers['content-type']
 			content_type = response.info().get_content_subtype()
-			#extension = mimetypes.guess_extension(content_type)
 			extension = content_type
 
 			img_temp = NamedTemporaryFile(delete=True)
@@ -89,6 +80,6 @@ class Post(models.Model):
 
 		
 
-	# Will probably use JSON field for storing the stats
+	## Future dev for stats
 	# https://docs.djangoproject.com/en/2.0/ref/contrib/postgres/fields/#django.contrib.postgres.fields.JSONField
 	##stats = models.JSONField()
