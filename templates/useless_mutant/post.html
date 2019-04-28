@@ -29,7 +29,7 @@
       </h2>
       <hr class="star-dark mb-5">
 	  <!--<h2>The Useless Mutant of the Day is: {{ single_post.search_query }}</h2>-->
-      <h2 class="text-center text-uppercase text-secondary mb-0">{{ single_post.search_query }}</h2>
+      <h2 class="text-center text-uppercase text-secondary mb-0 word-wrapping">{{ single_post.search_query }}</h2>
 
       <br>
 
@@ -37,11 +37,12 @@
         <div class="col-lg-8 d-block mx-auto">
           <a class="d-block mx-auto" href="/{{ hashtag }}/{{ single_post.url }}">
           
+          <!--
             <div class="d-flex position-absolute h-100 w-100">
               <div class="my-auto w-100 text-center text-white">
-                
               </div>
             </div>
+          -->
 
             <!--{% static 'useless_mutant/img/portfolio/cake.png' %} ## "/images/{{ single_post.image }}"-->
       			<img src="{{single_post.image.url}}" class="img-fluid mx-auto d-block w-100" alt="...">
@@ -82,7 +83,7 @@
 
       	{% for post in latest_posts %}
       		
-      	<div class="col-md-6 col-lg-4 padding-bottom-1em">
+      	<div class="col-md-6 col-lg-4 padding-bottom-1em padding-left-0 padding-right-0">
           <a class="um-image-caption-link d-block mx-auto" href="/{{hashtag}}/{{ post.url }}"> 
 
             <!-- I want this to fade in -->

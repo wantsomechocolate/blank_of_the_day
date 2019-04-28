@@ -12,6 +12,7 @@
 
 .word-wrapping {
 	white-space: pre-line;
+	word-wrap: break-word;
 }
 
 .padding-bottom-1em {
@@ -43,8 +44,8 @@
  	word-break:break-all;
  	/*twice the padding applied by template + an extra 15px. 
  	Necessary because the item this class applies to is absolutely positioned*/
- 	padding-right:45px; 
- 	padding-left:15px;
+ 	padding-right:30px; 
+ 	padding-left:30px;
 }
 
 .padding-1em{
@@ -62,4 +63,12 @@
 
 .font-size-caption-hashtag{
 	font-size:3em;
+}
+
+.padding-left-0{
+	padding-left:0;
+}
+
+.padding-right-0{
+	padding-right:0;
 }

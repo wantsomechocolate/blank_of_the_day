@@ -17,6 +17,6 @@ This project uses Python as the scripting language, Django as the templating fra
 *Future Development*
 - Include other sources of social media in the voting process. 
 	- Consider adding in Instagram for example
-	- They I imagine this working is having an Instagram winner and a Twitter winner for every hashtag, and then potentially having a combined winner (prorate based on userbase?)
+	- The way I imagine this working is having an Instagram winner and a Twitter winner for every hashtag, and then potentially having a combined winner (prorate based on userbase?)
 - Add support for special hashtags that are already taken by the application, e.g. admin and hashtags_all
-	- I think I would just have a url regex like /special/(admin|hashtags_all|...) then then just loads the correct view. 
+	- I think I would just have a url regex like /special/(admin|hashtags_all|...) that then just loads the correct view. 
