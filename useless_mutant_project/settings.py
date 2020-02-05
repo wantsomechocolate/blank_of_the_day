@@ -30,7 +30,7 @@ SECRET_KEY = os.environ['BOTD_DJANGO_SECRETKEY']
 if os.environ['BOTD_DJANGO_DEBUG']=="True":
     DEBUG = True
 else:
-    DEBUG = False
+    DEBUG = True
 
 ## ALLOWED HOSTS!
 allowed_host_text = os.environ['BOTD_DJANGO_ALLOWEDHOSTS'] 

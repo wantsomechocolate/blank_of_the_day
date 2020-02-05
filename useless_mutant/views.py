@@ -154,7 +154,7 @@ def	post(request, hashtag, post_url=None, created_at=None):
 	
 	else: ## If the post_url isn't blank we need to get a specific post. 
 		created_at_datetime = datetime.datetime.strptime(created_at,DATE_FORMAT)	
-		created_at_datetime = created_at_datetime - datetime.timedelta(hours=4) #Kludge
+		created_at_datetime = created_at_datetime - datetime.timedelta(hours=5) #Kludge
 
 		## I have to do this because I haven't excatly figured out ms timestamps. 
 		start = created_at_datetime - datetime.timedelta(seconds=1)
