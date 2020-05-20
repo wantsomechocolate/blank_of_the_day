@@ -12,7 +12,7 @@ eyeD3==0.7.9
 future==0.16.0
 google-api-python-client==1.6.4
 gunicorn==19.9.0
-httplib2==0.10.3
+httplib2==0.18.0
 idna==2.6
 instantmusic==2.2
 kombu==4.2.1
