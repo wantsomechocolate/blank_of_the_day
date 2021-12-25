@@ -14,6 +14,7 @@ Python, Django, Heroku, Heroku-Postgres, Amazon S3, Git, Github
 - Pillow==8.4.0
 - django-heroku==0.3.1
 - django-storages==1.12.3
+- gunicorn==20.1.0
 
 *To Do List*
 - Obviously I should write some tests for this application. 
