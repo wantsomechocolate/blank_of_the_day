@@ -17,7 +17,7 @@
 ##results = api.GetSearch(term="#"+str(hashtag), result_type="recent", count=100)
 
 import tweepy
-import os
+import os, re
 import collections
 
 consumer_key=os.environ["USELESSMUTANT_TWITTER_APIKEY"]
@@ -42,3 +42,24 @@ for tweet in tweets:
         vote_text_list.append(tweet.full_text)
 
 c = collections.Counter(vote_text_list)
+
+most_popular_tuple = c.most_common(1)[0]
+most_popular_vote = most_popular_tuple[0]
+most_popular_count= most_popular_tuple[1]
+q_raw=most_popular_vote
+
+## remove urls
+pattern = r'(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])'
+matches = re.finditer(regex,q_raw)
+for match in matches:
+    q_raw = q_raw.replace(match.group()," ")
+
+## Remove characters that are not words
+remove_list=r"""@#$%^&*()[]{}"'\/?<>‘’|:;.,~`"""
+for char in remove_list:
+    q_raw = q_raw.replace(char," ")
+
+## remove newlines and whitespace
+q_raw = " ".join(q_raw.split())
+
+from apiclient.discovery import build

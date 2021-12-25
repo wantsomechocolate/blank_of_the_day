@@ -4,7 +4,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 
         ## Standard
-        import random, datetime, os
+        import random, datetime, os, re
         from datetime import datetime, timezone
         from io import BytesIO
         from urllib.request import urlretrieve
