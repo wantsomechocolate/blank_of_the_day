@@ -14,8 +14,9 @@ urlpatterns	=	[
 	url(r'^hashtags_all/$', views.hashtags_all, name = 'hashtags_all'),
 
 
-	# match hashtag/post_url-created_at
-	url(r'^(?P<hashtag>\w+)/(?P<post_url>[^/]+)-(?P<created_at>\d+)/$',	views.post,	name='post'),
+	# Match view for a specific post 
+	# I want to enfore here that the beginning of the url as to be the same thing twice separated by a /, but later. 
+	url(r'^(?P<hashtag>\w+)/(?P<hashtag_2>[^/]+)-(?P<created_at>\d+)/$',	views.post,	name='post'),
 
 
 	# if that doesn't match, check to see if it's hashtag/archive, which would show all posts
@@ -31,7 +32,7 @@ urlpatterns	=	[
 
 
 	################################################################################################
-	## This is not longer necessary because this was turned into a django manage.py funciton so that
+	## This is not longer necessary because this was turned into a django manage.py function so that
 	## It could be called from the heroku scheduler. 
 	# This is the special view for displaying the result of running the function that is to be scheduled to 
 	# create posts. It doesn't actually need a view. 

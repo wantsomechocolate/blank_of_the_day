@@ -121,7 +121,8 @@ def	index(request):
 
 
 
-def	post(request, hashtag, post_url=None, created_at=None):
+#def	post(request, hashtag, post_url=None, created_at=None):
+def	post(request, hashtag, hashtag_2 = None, created_at=None):
 
 	## Show (for a given hashtag) a specific post or show the most recent post depending on post_url
 
@@ -149,7 +150,7 @@ def	post(request, hashtag, post_url=None, created_at=None):
 		return	HttpResponse(t.render(c))
 
 	## Lets see if this is for index or a specific post
-	if post_url==None: ## If post_url is none we get the most recent post. 
+	if hashtag_2==None: ## If post_url is none we get the most recent post. 
 		single_post = latest_posts.first()
 	
 	else: ## If the post_url isn't blank we need to get a specific post. 
@@ -161,8 +162,10 @@ def	post(request, hashtag, post_url=None, created_at=None):
 		end   = created_at_datetime + datetime.timedelta(seconds=1)
 
 		try:
-			single_post = Post.objects.get( search_query=post_url.replace('_',' ')	, 
+
+			single_post = Post.objects.get( hashtag = hashtag_record	 			, 
 											created_at__range = (start, end) 		,	)
+
 		except Post.DoesNotExist:
 			c 	=	{	'query_returned_none'	: 	True 						, 
 						'message'				: 	MESSAGE_POST_DOES_NOT_EXIST ,	}
@@ -225,210 +228,6 @@ def	archive(request, hashtag):
 
 	## FINAL RETURN ########################################################################
 	return	HttpResponse(t.render(c))
-
-
-## This function is now a managpy.py command called update_posts
-## Should be scheduled, should require admin priveldges to run
-# def create_new_post_from_votes_twitter(request, hashtag):
-
-# 	from collections import Counter
-# 	import random
-	
-# 	#from useless_mutant.useless_module import tally_twitter_votes
-# 	c = um.tally_twitter_votes(hashtag)
-
-# 	# If there are no votes than don't create a post!
-# 	if c == Counter():
-# 		return	HttpResponse('<html><body>There are no votes to create a post</body></html>')
-	
-	
-# 	most_popular_tuple = c.most_common(1)[0]
-# 	most_popular_vote = most_popular_tuple[0]
-# 	most_popular_count= most_popular_tuple[1]
-
-# 	if most_popular_count == 1:
-# 		return	HttpResponse('<html><body>No one rose above the rest</body></html>')
-
-
-# 	q_raw=most_popular_vote
-# 	q = q_raw.replace('\n',' ')
-
-# 	## Might consider randomizing this in the future. 
-# 	i = random.randrange(0,MAX_NUM_RESULT)
-
-# 	link_info = um.google_image_search(q,i)
-	
-# 	if 'error' in link_info.keys():
-# 		return	HttpResponse('<html><body>The search query'+'<br>'+str(q)+'<br>'+'did not return any results</body></html>')
-
-# 	img_link=link_info['link']
-
-# 	h, h_created_tf = Hashtag.objects.get_or_create(name = hashtag)
-# 	if not h_created_tf:
-# 		h.last_post_added_time=datetime.datetime.utcnow()
-# 	h.save()
-
-# 	## Save the post (automatically takes care of saving the image)
-# 	p = Post(	search_query 		=	q 					, 
-# 				search_query_raw	=	q_raw 				, 
-# 				link 				= 	img_link			, 
-# 				votes 				= 	most_popular_count 	, 
-# 				hashtag 			= 	h 					, 	)
-# 	p.save()
-
-# 	return	HttpResponse('<html><body>Successfully created post using'+'<br>'+str(q)+'<br>'+'!</body></html>')
-
-	#most_popular_tuple = c.most_common(1)[0]
-	#most_popular_vote = most_popular_tuple[0]
-	#most_popular_count = most_popular_tuple[1]	
-
-
-
-
-
-
-##############################################################################
-## Older functions
-##############################################################################
-
-
-## Currently index just loads the most recent mutant, at some point the search should be more specific.
-# def	hashtag_index(request, hashtag):
-# 	from datetime import datetime
-
-# 	## try to get all the posts for this hashtag
-# 	## if the variable for the posts is empty, then the view will get a variable telling it so
-# 	## In the view, the first post will be treated a special way!, if there are other items
-# 	## they will be looped through and placed in a differenct section. 
-
-# 	template = 'useless_mutant/post.html'
-#     hashtag_modified = hashtag #.replace("_"," ")
-
-# 	## Get all the posts
-# 	latest_posts = Post.objects.filter(hashtag=hashtag).order_by('-created_at')
-
-# 	## If there are no posts!
-# 	if latest_posts == None:
-# 		t = loader.get_template(template)
-# 		c = { 'hashtag_not_setup' : True, }
-# 		return HttpResponse(t.render(c))
-
-# 	## If there are posts!
-
-# 	#latest_post = latest_posts.first()
-# 	#latest_post.url = latest_post.search_query.replace(' ','_')
-	
-# 	string_date = datetime.strftime(latest_post.created_at, "%Y-%m-%d")
-
-
-# 	## For the other posts
-# 	for post in latest_posts:
-# 		post.url = post.search_query.replace(' ','_') + "-" + str(post.created_at.strftime(DATE_FORMAT))
-
-# 	t	=	loader.get_template(template)
-# 	c	=	{ 'single_post'         : latest_post      ,
-# 			  'hashtag_modified'    : hashtag_modified , 
-# 			  'string_date'         : string_date      , 
-# 			  'latest_posts'        : latest_posts     , }
-
-# 	return	HttpResponse(t.render(c))
-
-
-
-
-
-## Function to add a new post, this is mostly for testing purposes and to keep the google search engine api at the top of my mind
-# def create_new_post(request):
-
-# 	from apiclient.discovery import build
-# 	import os
-
-# 	search_query=request.GET.get('q')
-
-# 	search_query=search_query.replace('_',' ')
-
-# 	# api_key = os.environ['USELESSMUTANT_APIKEY']
-# 	# service = build('customsearch','v1', developerKey = api_key)
-
-# 	# res = service.cse().list(q=search_query ,cx=os.environ['USELESSMUTANT_CX'], searchType='image', num=1, imgType='clipart', fileType='png',safe='high')
-# 	# res_ex = res.execute()
-
-# 	i = 30
-
-# 	link_info = um.google_image_search(q,i)
-
-# 	#img_link=res_ex['items'][0]['link']
-
-# 	img_link=link_info['link']
-
-# 	#print (img_link)
-
-# 	p = Post(search_query=search_query, link=img_link)
-# 	p.save()
-
-# 	return	HttpResponse('<html><body>Success!</body></html>')
-
-
-
-
-## Function to add a new post, this is mostly for testing purposes and to keep the google search engine api at the top of my mind
-# def create_new_post_from_twitter(request):
-
-# 	## The twitter stuff. 
-# 	import twitter
-# 	import os
-# 	from django.shortcuts import redirect
-
-# 	consumer_key=os.environ["USELESSMUTANT_TWITTER_APIKEY"]
-# 	consumer_secret=os.environ["USELESSMUTANT_TWITTER_SECRETKEY"]
-# 	access_token=os.environ["USELESSMUTANT_TWITTER_ACCESSTOKEN"]
-# 	access_token_secret=os.environ["USELESSMUTANT_TWITTER_SECRETTOKEN"]
-
-# 	api = twitter.Api(
-# 		consumer_key=consumer_key, 
-# 		consumer_secret=consumer_secret, 
-# 		access_token_key=access_token, 
-# 		access_token_secret=access_token_secret
-# 		)
-
-# 	user="WantsomeChan"
-# 	statuses = api.GetUserTimeline(screen_name=user)
-# 	most_recent=statuses[0].text
-# 	index=most_recent.find("#uselessmutant")
-
-# 	## Get the search query
-# 	if index == -1:
-# 		content="Snooki"
-# 	else:
-# 		content=most_recent[0:most_recent.find("#uselessmutant")].strip()
-
-
-# 	## The google stuff. 
-# 	from apiclient.discovery import build
-# 	import os
-
-# 	#search_query=request.GET.get('q')
-# 	#search_query=search_query.replace('_',' ')
-
-# 	search_query=content
-
-# 	api_key = os.environ['USELESSMUTANT_APIKEY']
-# 	service = build('customsearch','v1', developerKey = api_key)
-
-# 	res = service.cse().list(q=search_query ,cx=os.environ['USELESSMUTANT_CX'], searchType='image', num=1, imgType='clipart', fileType='png',safe='high')
-# 	res_ex = res.execute()
-
-# 	img_link=res_ex['items'][0]['link']
-
-# 	#print (img_link)
-
-# 	p = Post(search_query=search_query, link=img_link)
-# 	p.save()
-
-# 	#return	HttpResponse('<html><body>Success!</body></html>')	
-# 	return redirect("index")
-
-
 
 
 

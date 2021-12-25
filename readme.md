@@ -1,9 +1,19 @@
 
 *Description*
-This is a goofy personal project that automatically creates daily posts based on twitter hashtags and google image search results. The general idea is that a number of hashtags are setup in the backend and once a day, a script runs that uses the twitter search API to look for tweets containing the given hashtags. Then for each hashtag, the tweets for that hashtag are modified to remove everything after the first hashtag and also remove the beginning of the tweet if it was a retweet. The tweets are then ranked in order of frequency and the winning text is used as the query for a google image search using the google custom search API. An image result is chosen at random from the top 100 results and a post is created. The most voted #example of the day is: 'tweet text' ::image::. 
+This is a goofy personal project that automatically creates daily posts based on twitter hashtags and google image search results. The general idea is that a number of hashtags are setup in the backend and once a day, a script runs that uses the twitter search API to look for tweets containing the given hashtags. Then for each hashtag, the tweets for that hashtag are ranked in order of frequency and the winning tweet (after some modification) is used as the query for a google image search using the google custom search API. An image result is chosen at random from the top 100 results (if there are that many) and a post is created. 
 
 *Powered By*
-This project uses Python as the scripting language, Django as the templating framework, Heroku as the hosting platform, Heroku-Postgres and Amazon Simple Storage Service as the storage utilities, Git and Github as the versioning utilities. 
+Python, Django, Heroku, Heroku-Postgres, Amazon S3, Git, Github 
+
+*Dependencies*
+- boto3==1.9.125
+- Django==2.2.10
+- python-twitter==3.5
+- google-api-python-client==1.7.8
+- psycopg2==2.7.7
+- Pillow==8.4.0
+- django-heroku==0.3.1
+- django-storages==1.12.3
 
 *To Do List*
 - Obviously I should write some tests for this application. 
