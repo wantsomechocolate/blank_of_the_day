@@ -21,10 +21,10 @@
       <hr class="star-dark mb-5">
       <div class="row">
         <div class="col-lg-4 ml-auto">
-          <p class="lead">The backend is set to monitor specific #hashtags. Once per day, the twitter search API is used to collect the 100 most recent tweets that contain that hashtag. All of the text before the first #hashtag in the tweet is taken for all 100 tweets and a set of unique strings is then ranked in order of frequency. </p>
+          <p class="lead">The backend is set to monitor specific #hashtags. Once per day, the twitter search API is used to collect recent tweets that contain that hashtag. The most common tweet is then used to create a google image search query. </p>
         </div>
         <div class="col-lg-4 mr-auto">
-          <p class="lead">The most frequent 'tweet' will be used as a search query on google image search. An image is randomly chosen from the first 100 results. The tweet text and the image are used to create a post showing that day's hashtag('blank') of the day. Check out <a href="https://github.com/wantsomechocolate/blank_of_the_day">the repo</a> for more information.</p>
+          <p class="lead">The query is used to do a google image search and an image is randomly chosen from the results. The tweet and the image are used to create a post showing the [blank] of the day. Check out <a href="https://github.com/wantsomechocolate/blank_of_the_day">the repo</a> for more information.</p>
         </div>
       </div>
 

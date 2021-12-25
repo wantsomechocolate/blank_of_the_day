@@ -1,0 +1,1 @@
+heroku run python manage.py update_posts -a blank-of-the-day
