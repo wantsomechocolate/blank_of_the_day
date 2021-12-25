@@ -4,7 +4,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 
         ## Standard
-        import random, datetime, os, re
+        import random, datetime, os, re, html
         from datetime import datetime, timezone
         from io import BytesIO
         from urllib.request import urlretrieve
@@ -62,9 +62,12 @@ class Command(BaseCommand):
             for match in matches:
                 q_raw = q_raw.replace(match.group()," ")
 
-            self.stdout.write("The tweet without links is: "+str(q_raw))
+            ## convert things like &AMP; to &, before removing any other special characters
+            q_raw = html.unescape(q_raw)
 
-            ## Remove special characters
+            self.stdout.write("The unescaped tweet without links is: "+str(q_raw))
+
+            ## Remove any remaining special characters
             remove_list=r"""@#$%^&*()[]{}"'\/?<>‘’|:;.,~`"""
             for char in remove_list:
                 q = q_raw.replace(char," ")
@@ -75,6 +78,7 @@ class Command(BaseCommand):
             self.stdout.write("The search text is: "+str(q))
 
             ## Can I import the value of MAX_NUM_RESULT to this sheet?
+            ## I think I might want to do something to make sure i isn't greater than the max number of results actually returned?
             i = random.randrange(0,MAX_NUM_RESULT)
 
             link_info = um.google_image_search(q,i)
@@ -107,10 +111,10 @@ class Command(BaseCommand):
                     break
                 except HTTPError: 
                     attempts+=1
-                    self.stdout.write("Error trying to open the link, attempt: "+str(attempts))
+                    self.stdout.write("HTTP error trying to open the link, attempt: "+str(attempts))
                 except URLError:
                     attempts+=1
-                    self.stdout.write("Error trying to open the link, attempt: "+str(attempts))
+                    self.stdout.write("URL error trying to open the link, attempt: "+str(attempts))
 
             if success == False:
                 self.stdout.write("Reading the link in as an image failed, moving on")
