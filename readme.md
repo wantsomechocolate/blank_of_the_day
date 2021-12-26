@@ -6,10 +6,10 @@ This is a goofy personal project that automatically creates daily posts based on
 Python, Django, Heroku, Heroku-Postgres, Amazon S3, Git, Github 
 
 *Dependencies*
-- boto3==1.9.125
-- Django==2.2.10
-- python-twitter==3.5
-- google-api-python-client==1.7.8
+- Django==2.2.24
+- tweepy==4.4.0
+- google-api-python-client==2.33.0
+- boto3==1.20.26
 - psycopg2==2.7.7
 - Pillow==8.4.0
 - django-heroku==0.3.1
