@@ -76,3 +76,13 @@
 .justify{
 	text-align: justify;
 }
+
+
+.pagination span{
+	width: 100%;
+}
+
+.pagination a{
+	color: white;
+	text-decoration: none;
+}

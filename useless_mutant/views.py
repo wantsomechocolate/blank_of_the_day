@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Context, loader
 from django.shortcuts import get_object_or_404
+from django.core.paginator import Paginator
 
 #from datetime import datetime
 import datetime
@@ -221,6 +222,10 @@ def	archive(request, hashtag):
 	## VIEW LOGIC ##########################################################################	
 	for post in latest_posts:
 		um.post_add_calc_fields(post, GLOBALS_DICT)
+
+	paginator = Paginator(latest_posts, 10) # Show n contacts per page
+	page = request.GET.get('page')
+	latest_posts = paginator.get_page(page)
 		
 	c = { 'latest_posts': latest_posts ,
 		  'hashtag'     : hashtag      , }

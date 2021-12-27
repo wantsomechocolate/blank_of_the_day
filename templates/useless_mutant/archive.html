@@ -25,7 +25,9 @@
       <div class="row">      
 
       {% for post in latest_posts %}
-
+        <div class="col-lg-2">
+          <img src="{{post.image.url}}" class="img-fluid mx-auto d-block w-100 word-wrapping" alt="...">
+        </div>
         <div class="col-lg-12">
           <a class="d-block mx-auto" href="/{{hashtag}}/{{ post.url }}">
             <div class="d-flex">
@@ -40,6 +42,33 @@
 
       </div>
     </div>
+
+    &nbsp;
+
+    <div class="container">
+
+      <div class="pagination">
+          <span class = "text-center">
+              {% if latest_posts.has_previous %}
+                  <a href="?page=1">&laquo; first</a>
+                  <a href="?page={{ latest_posts.previous_page_number }}">previous</a>
+              {% endif %}
+
+              <span>
+                  Page {{ latest_posts.number }} of {{ latest_posts.paginator.num_pages }}
+              </span>
+
+              {% if latest_posts.has_next %}
+                  <a href="?page={{ latest_posts.next_page_number }}">next</a>
+                  <a href="?page={{ latest_posts.paginator.num_pages }}">last &raquo;</a>
+              {% endif %}
+          </span>
+      </div>      
+
+
+    </div>
+
+
   </section>
 
   {% endif %}
