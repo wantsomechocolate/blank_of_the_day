@@ -86,3 +86,50 @@
 	color: white;
 	text-decoration: none;
 }
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 160px;
+}
+
+.archive-link:hover {
+	text-decoration: none;
+}
+
+
+/*.archive-row-even{
+	background-color: #212529;
+}
+
+.archive-row-odd{
+	background-color: #f8f9fa;
+}*/
+
+.archive-row-odd h4{
+	color: #212529;
+}
+
+.archive-row-even	 h4{
+	color: 	#e9ecef;
+}
+
+.archive-img-container{
+	padding: 10px;
+}
+
+.archive-img-container-inner{
+	height: 160px;
+	overflow: hidden;
+}
+
+.archive-img{
+	object-fit: cover;
+	min-height: 160px;
+}
+
+.pagination{
+	font-size: large;
+}

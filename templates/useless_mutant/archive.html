@@ -22,25 +22,27 @@
     <div class="container">
       <h2 class="text-center text-uppercase mb-0">Archive for #{{ hashtag }}</h2>
       <hr class="star-light mb-5">
-      <div class="row">      
+           
 
       {% for post in latest_posts %}
-        <div class="col-lg-2">
-          <img src="{{post.image.url}}" class="img-fluid mx-auto d-block w-100 word-wrapping" alt="...">
-        </div>
-        <div class="col-lg-12">
-          <a class="d-block mx-auto" href="/{{hashtag}}/{{ post.url }}">
-            <div class="d-flex">
+      <a class="d-block mx-auto archive-link" href="/{{hashtag}}/{{ post.url }}">
+        <div class="row archive-row {% if forloop.counter|divisibleby:2 %}archive-row-even{% else %}archive-row-odd{% endif %} "> 
+          <div class="col-lg-2 archive-img-container center">
+            <div class="archive-img-container-inner center">
+              <img src="{{post.image.url}}" class="img-fluid mx-auto d-block w-100 word-wrapping archive-img" alt="...">
+            </div>
+          </div>
+          <div class="col-lg-10 archive-text-container center">
+            <div class="d-flex center">
               <div class="my-auto w-100 text-center text-white">
-                  <h4>{{post.text_date}} {{post.text_time}} - {{post.search_query}}</h4>
+                  <h4 class="archive-text">{{post.text_date}} {{post.text_time}} - {{post.search_query}}</h4>
               </div>
             </div>
-          </a>
+          </div>
         </div>
-
+      </a>
       {% endfor %}
 
-      </div>
     </div>
 
     &nbsp;
@@ -50,8 +52,8 @@
       <div class="pagination">
           <span class = "text-center">
               {% if latest_posts.has_previous %}
-                  <a href="?page=1">&laquo; first</a>
-                  <a href="?page={{ latest_posts.previous_page_number }}">previous</a>
+                  <a href="?page=1">&laquo; first</a> | 
+                  <a href="?page={{ latest_posts.previous_page_number }}">previous</a> | 
               {% endif %}
 
               <span>
@@ -59,8 +61,8 @@
               </span>
 
               {% if latest_posts.has_next %}
-                  <a href="?page={{ latest_posts.next_page_number }}">next</a>
-                  <a href="?page={{ latest_posts.paginator.num_pages }}">last &raquo;</a>
+                  | <a href="?page={{ latest_posts.next_page_number }}">next</a>
+                  | <a href="?page={{ latest_posts.paginator.num_pages }}">last &raquo;</a>
               {% endif %}
           </span>
       </div>      

@@ -3,9 +3,10 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator
+from django.utils import timezone
 
 #from datetime import datetime
-import datetime
+from datetime import datetime, timedelta
 
 from useless_mutant.models import Post, Hashtag
 import useless_mutant.useless_module as um
@@ -155,12 +156,11 @@ def	post(request, hashtag, hashtag_2 = None, created_at=None):
 		single_post = latest_posts.first()
 	
 	else: ## If the post_url isn't blank we need to get a specific post. 
-		created_at_datetime = datetime.datetime.strptime(created_at,DATE_FORMAT)	
-		#created_at_datetime = created_at_datetime - datetime.timedelta(hours=5) #Kludge
+		created_at_datetime = datetime.strptime(created_at,DATE_FORMAT)	
 
 		## I have to do this because I haven't excatly figured out ms timestamps. 
-		start = created_at_datetime - datetime.timedelta(seconds=1)
-		end   = created_at_datetime + datetime.timedelta(seconds=1)
+		start = created_at_datetime - timedelta(seconds=1)
+		end   = created_at_datetime + timedelta(seconds=1)
 
 		try:
 
@@ -207,9 +207,11 @@ def	archive(request, hashtag):
 				'message'				:	MESSAGE_HASHTAG_NOT_SETUP	,	}
 		return HttpResponse(t.render(c))
 
+	time_threshold = timezone.now() - timedelta(days=100)
 	## If it does get the associated posts
-	latest_posts = Post.objects 							\
-						.filter(hashtag=hashtag_record.id)	\
+	latest_posts = Post.objects 								\
+						.filter(hashtag=hashtag_record.id)	 	\
+						.filter(created_at__gt=time_threshold)	\
 						.order_by('-created_at')			#
 
 	if len(latest_posts) == 0: ## If there are no posts!
