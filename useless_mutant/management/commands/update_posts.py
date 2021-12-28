@@ -69,7 +69,7 @@ class Command(BaseCommand):
 
             ## Remove any remaining special characters
             q = q_raw
-            remove_list=r"""@#$%^&*()[]{}"'\/?<>‘’|:;.,~`"""
+            remove_list=r"""@#^*()[]{}"'\/?<>‘’|:;~`"""
             for char in remove_list:
                 q = q.replace(char," ")
 
