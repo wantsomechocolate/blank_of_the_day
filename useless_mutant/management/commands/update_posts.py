@@ -68,9 +68,10 @@ class Command(BaseCommand):
             self.stdout.write("The unescaped tweet without links is: "+str(q_raw))
 
             ## Remove any remaining special characters
+            q = q_raw
             remove_list=r"""@#$%^&*()[]{}"'\/?<>‘’|:;.,~`"""
             for char in remove_list:
-                q = q_raw.replace(char," ")
+                q = q.replace(char," ")
 
             ## remove newlines and whitespace
             q = " ".join(q.split())
@@ -101,7 +102,7 @@ class Command(BaseCommand):
             self.stdout.write("The query returned this link: "+str(img_link))
 
             
-            ## Try to get the url as a file. Sometimes this randomly failes so try three times.
+            ## Try to get the url as a file. Sometimes this randomly fails so try three times.
             attempts=0
             success = False
             while attempts<3:
@@ -123,14 +124,13 @@ class Command(BaseCommand):
                 continue
 
 
-            ## Come up with a name for the file
-            created_at = datetime.now(timezone.utc)
-            time_string = datetime.strftime(created_at,"%Y%m%d%H%M%S%f")
-            filename = "{}-{}.{}".format(hashtag,time_string,'png')
-            #filename = os.path.join(hashtag.name,filename)
+
+
 
 
             ## Try to open in pillow and convert to a png
+            # I want to actually have a set of image formats I'm ok with, as long as pillow can save them
+            # and they can be displayed on a website in an img tag. 
             try:
                 img = Image.open(response[0])
             except UnidentifiedImageError:
@@ -139,12 +139,27 @@ class Command(BaseCommand):
                 self.stdout.write("")
                 continue               
 
-            #create an in memory place for the png version to go
-            f = BytesIO()
-            img.save(f,format='PNG')
+            img_format = img.format
+            content_type = response[1].get_content_type()
 
-            #Convert to something Django can sve
-            image = InMemoryUploadedFile(f, None, filename, 'image/png', f.tell(), None)
+            allowed_content_types = ['image/gif','image/png','image/jpg','image/jpeg']
+            if content_type not in allowed_content_types:
+                content_type = 'image/png'
+                img_format = 'png'
+
+            ## Come up with a name for the file
+            created_at = datetime.now(timezone.utc)
+            time_string = datetime.strftime(created_at,"%Y%m%d%H%M%S%f")
+            filename = "{}-{}.{}".format(hashtag,time_string,img_format)
+
+            
+            #create an in memory file for the file to go before giving it to the django dave field
+            # these two lines also try to conver the image if it wasn't in the allowed content types. 
+            f = BytesIO()
+            img.save(f,format=img_format)
+
+            #Convert to something Django can save
+            image = InMemoryUploadedFile(f, None, filename, response[1].get_content_type(), f.tell(), None)
 
             p = Post(	search_query 		        =	q 					 ,
                         search_query_raw            =   q_raw                , 
