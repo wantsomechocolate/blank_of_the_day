@@ -207,18 +207,21 @@ def	archive(request, hashtag):
 				'message'				:	MESSAGE_HASHTAG_NOT_SETUP	,	}
 		return HttpResponse(t.render(c))
 
-	time_threshold = timezone.now() - timedelta(days=100)
+	#time_threshold = timezone.now() - timedelta(days=100)
 	## If it does get the associated posts
 	latest_posts = Post.objects 								\
 						.filter(hashtag=hashtag_record.id)	 	\
-						.filter(created_at__gt=time_threshold)	\
 						.order_by('-created_at')			#
+						#.filter(created_at__gt=time_threshold)	\
 
 	if len(latest_posts) == 0: ## If there are no posts!
 		t = loader.get_template(template)
 		c = { 	'query_returned_none' 	: 	True 						, 
 				'message'				: 	MESSAGE_NO_POSTS_ON_HASHTAG	,	}
 		return HttpResponse(t.render(c))
+
+	if len(latest_posts)>100:
+		latest_posts = latest_posts[0:100]
 
 
 	## VIEW LOGIC ##########################################################################	

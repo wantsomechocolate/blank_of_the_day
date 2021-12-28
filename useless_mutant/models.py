@@ -44,9 +44,14 @@ class Post(models.Model):
 	#upload_to = hashtag.name
 
 	def	__str__(self):
-		return	"{0} - {1}\n".format(self.created_at, self.search_query)
+		return	"{0} - {1}\n".format(self.created_at, self.search_query[0:50])
 	
 	## Future dev for stats
 	# https://docs.djangoproject.com/en/2.0/ref/contrib/postgres/fields/#django.contrib.postgres.fields.JSONField
 	##stats = models.JSONField()
+
+	@property
+	def short_search_query(self):
+		return self.search_query if len(self.search_query) < 50 else (self.search_query[:47] + '...')
+
 
