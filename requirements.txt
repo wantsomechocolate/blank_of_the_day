@@ -19,7 +19,7 @@ httplib2==0.19.0
 idna==3.3
 jmespath==0.10.0
 oauthlib==3.1.1
-Pillow==8.4.0
+Pillow==9.0.0
 protobuf==3.19.1
 psycopg2==2.8.6
 pyasn1==0.4.8
