@@ -1,8 +1,10 @@
 
 *Description*
+
 This is a goofy personal project that automatically creates daily posts based on twitter hashtags and google image search results. The general idea is that a number of hashtags are setup in the backend and once a day, a script runs that uses the twitter search API to look for tweets containing the given hashtags. Then for each hashtag, the tweets for that hashtag are ranked in order of frequency and the winning tweet (after some modification) is used as the query for a google image search using the google custom search API. An image result is chosen at random from the top 100 results (if there are that many) and a post is created. 
 
 *Powered By*
+
 Python, Django, Heroku, Heroku-Postgres, Amazon S3, Git, Github 
 
 *Dependencies*
@@ -17,6 +19,7 @@ Python, Django, Heroku, Heroku-Postgres, Amazon S3, Git, Github
 - gunicorn==20.1.0
 
 *To Do List*
+
 - Obviously I should write some tests for this application. 
 - Get logging working
 - Get emails working when 500 and 404 errors occur (or go straight to something like Sentry)
@@ -26,6 +29,7 @@ Python, Django, Heroku, Heroku-Postgres, Amazon S3, Git, Github
 
 
 *Future Development*
+
 - Include other sources of social media in the voting process. 
 	- Consider adding in Instagram for example
 	- The way I imagine this working is having an Instagram winner and a Twitter winner for every hashtag, and then potentially having a combined winner (prorate based on userbase?)
