@@ -33,10 +33,10 @@ else:
     DEBUG = False
 
 ## ALLOWED HOSTS!
-allowed_host_text = os.environ['BOTD_DJANGO_ALLOWEDHOSTS'] 
+#allowed_host_text = os.environ['BOTD_DJANGO_ALLOWEDHOSTS'] 
 ALLOWED_HOSTS = []
-for item in allowed_host_text.split(","):
-    ALLOWED_HOSTS.append(item.strip())
+#for item in allowed_host_text.split(","):
+#    ALLOWED_HOSTS.append(item.strip())
 
 # Application definition
 
@@ -89,21 +89,22 @@ WSGI_APPLICATION = 'useless_mutant_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-from urllib.parse import urlparse
-DB_INFO = urlparse(os.environ['BOTD_HEROKU_POSTGRESDB'])
+
+#from urllib.parse import urlparse
+#DB_INFO = urlparse(os.environ['BOTD_HEROKU_POSTGRESDB'])
 
 DATABASES = {
+#    'default': {
+#        'ENGINE'    :   'django.db.backends.postgresql' ,
+#        'NAME'      :   DB_INFO.path[1:]               ,                      
+#        'USER'      :   DB_INFO.username                ,
+#        'PASSWORD'  :   DB_INFO.password                ,
+#        'HOST'      :   DB_INFO.hostname                ,
+#        #'PORT'      :   DB_INFO.port                    ,
+#    },
+
+
     'default': {
-        'ENGINE'    :   'django.db.backends.postgresql' ,
-        'NAME'      :   DB_INFO.path[1:]               ,                      
-        'USER'      :   DB_INFO.username                ,
-        'PASSWORD'  :   DB_INFO.password                ,
-        'HOST'      :   DB_INFO.hostname                ,
-        #'PORT'      :   DB_INFO.port                    ,
-    },
-
-
-    'local': {
         'ENGINE'    :   'django.db.backends.sqlite3'            ,
         'NAME'      :   os.path.join(BASE_DIR, 'db.sqlite3')    ,
         'USER'      :   ''                                      ,
@@ -177,12 +178,14 @@ STATICFILES_DIRS = [
 
 
 ## For S3
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_ACCESS_KEY_ID = os.environ['BOTD_AWS_ACCESSKEY']
-AWS_SECRET_ACCESS_KEY = os.environ['BOTD_AWS_SECRETKEY']
-AWS_STORAGE_BUCKET_NAME = os.environ['BOTD_AWS_BUCKETNAME']
-AWS_S3_REGION_NAME = "us-west-2"
-AWS_DEFAULT_ACL = None
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#AWS_ACCESS_KEY_ID = os.environ['BOTD_AWS_ACCESSKEY']
+#AWS_SECRET_ACCESS_KEY = os.environ['BOTD_AWS_SECRETKEY']
+#AWS_STORAGE_BUCKET_NAME = os.environ['BOTD_AWS_BUCKETNAME']
+#AWS_S3_REGION_NAME = "us-west-2"
+#AWS_DEFAULT_ACL = None
+
+DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
 
 ## FOR EMAIL
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

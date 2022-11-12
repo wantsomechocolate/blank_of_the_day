@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime, timezone
-from django.contrib.postgres.fields import JSONField
+#from django.contrib.postgres.fields import JSONField
 
 
 class Hashtag(models.Model):
